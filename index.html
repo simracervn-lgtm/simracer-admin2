@@ -237,7 +237,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: #ff6b00
         Đăng nhập
       </button>
       <p id="login-error" class="text-red-400 text-xs text-center hidden"></p>
-      <p class="text-[11px] text-zinc-600 text-center">Chỉ dành cho: simracervn@gmail.com / phamthanhcong1992@gmail.com</p>
+      <p class="text-[11px] text-zinc-600 text-center">Chỉ dành cho: simracervn@gmail.com</p>
     </form>
   </div>
 </div>
@@ -440,7 +440,7 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.database();
 const storage = firebase.storage();
-const ALLOWED_EMAILS = ['simracervn@gmail.com','phamthanhcong1992@gmail.com'];
+const ALLOWED_EMAILS = ['simracervn@gmail.com'];
 const PLACEHOLDER = 'https://placehold.co/800x800/0f1115/FF6B00?text=SIMRACER+VN';
 
 const $ = id => document.getElementById(id);
@@ -718,7 +718,7 @@ function updateStats(){
   $('stat-orders-today').textContent=orders.filter(o=>o.createdAt&&isToday(o.createdAt)).length;
   $('stat-stock').textContent=products.reduce((s,p)=>s+(Number(p.stock)||0),0);
   
-  // Revenue calculations
+/ Revenue calculations
   const now = new Date();
   const startOfWeek = new Date(now); startOfWeek.setDate(now.getDate() - now.getDay() + 1); startOfWeek.setHours(0,0,0,0);
   const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
